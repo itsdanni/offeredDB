@@ -1,8 +1,7 @@
 /**
  * todo: connect to a postgres database
  */
-import Sequelize from 'sequelize';
-
+const Sequelize = require('sequelize');
 const sequelize = new Sequelize('postgres://localhost:5432/offeredDB_dev')
 
 sequelize
