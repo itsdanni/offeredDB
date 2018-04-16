@@ -26111,7 +26111,12 @@ var Search = function Search(props) {
     _react2.default.createElement(
       'h1',
       null,
-      'hi'
+      'I\'m looking for companies in these cities at these stages using these technologies'
+    ),
+    _react2.default.createElement(
+      'button',
+      { type: 'button', className: 'btn btn-outline-primary' },
+      'Let\'s go!'
     )
   );
 };
@@ -26130,7 +26135,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.SearchBG = undefined;
 
-var _templateObject = _taggedTemplateLiteral(['\n  background: url(\'http://via.placeholder.com/1920x1080\') no-repeat center center fixed;\n  height: 1080px;\n  -webkit-background-size: cover;\n  -moz-background-size: cover;\n  background-size: cover;\n  -o-background-size: cover;\n\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n'], ['\n  background: url(\'http://via.placeholder.com/1920x1080\') no-repeat center center fixed;\n  height: 1080px;\n  -webkit-background-size: cover;\n  -moz-background-size: cover;\n  background-size: cover;\n  -o-background-size: cover;\n\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  margin-top: 5rem;\n  padding: 5rem;\n  height: 400px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  align-items: center;\n}\n'], ['\n  margin-top: 5rem;\n  padding: 5rem;\n  height: 400px;\n  display: flex;\n  flex-direction: column;\n  justify-content: space-around;\n  align-items: center;\n}\n']);
 
 var _react = __webpack_require__(7);
 
@@ -26145,6 +26150,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 var SearchBG = exports.SearchBG = _styledComponents2.default.div(_templateObject);
+// background: url('http://via.placeholder.com/1920x1080') no-repeat center center fixed;
+//   height: 1080px;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   background-size: cover;
+//   -o-background-size: cover;
 
 /***/ }),
 /* 224 */
