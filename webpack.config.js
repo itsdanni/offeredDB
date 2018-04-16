@@ -6,7 +6,7 @@ module.exports = {
     },
     devtool: 'source-map',
     module: {
-      rules: [
+      rules:[
         {
           test: /\.jsx?$/,
           exclude: /(node_modules|bower_components)/,

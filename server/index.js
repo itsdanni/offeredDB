@@ -39,14 +39,15 @@ const configureApp = () => {
 	});
 }
 
-//const syncdb = () => db.sync();
+const syncdb = () => db.sync();
 
 // returns a server instance
 const startServer = () => app.listen(PORT, () => console.log('server started on 8080!'))
 
+// only sync and start server if we are not in test mode
 if (require.main === module) {
 	// functions will be called after database sync
-	db.authenticate()
+	syncdb()
 	.then(configureApp)
 	.then(startServer)
 } else configureApp()

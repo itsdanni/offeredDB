@@ -19,17 +19,19 @@
     "nodemon": "^1.17.3",
     "pg": "^7.4.1",
     "pg-hstore": "^2.3.2",
-    "prop-types": "^15.6.0",
+    "prop-types": "^15.6.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "sequelize": "^4.37.6"
+    "react-router": "^4.2.0",
+    "sequelize": "^4.37.6",
+    "styled-components": "^3.2.5"
   },
   "scripts": {
     "build": "webpack",
     "build-w": "webpack -w",
     "start": "NODE_ENV='development' babel-node server",
     "start-w": "NODE_ENV='development' nodemon server -e html,js,scss --ignore public",
-    "start-all-w": "yarn run build-watch & yarn run start-w",
+    "start-all-w": "yarn run build-w & yarn run start-w",
     "test": "NODE_ENV='test' DATABASE_URL='postgres://localhost:5432/offeredDB_dev' mocha ./**/*.spec.js --compilers js:babel-register",
     "seed": "node seed",
     "clean": "rm -rf node_modules"
