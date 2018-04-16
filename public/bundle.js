@@ -11584,11 +11584,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Nav = function Nav(props) {
   return _react2.default.createElement(
     "nav",
-    { className: "navbar navbar-light bg-light" },
+    { className: "navbar navbar-light bg-light fixed-top" },
     _react2.default.createElement(
       "a",
       { className: "navbar-brand", href: "#" },
-      "Navbar"
+      "Offered"
     )
   );
 };
@@ -26130,7 +26130,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.SearchBG = undefined;
 
-var _templateObject = _taggedTemplateLiteral(['\n  background: url(\'http://via.placeholder.com/1920x1080\') no-repeat center center fixed;\n  height: 1080px;\n  -webkit-background-size: cover;\n  -moz-background-size: cover;\n  background-size: cover;\n  -o-background-size: cover;\n}\n'], ['\n  background: url(\'http://via.placeholder.com/1920x1080\') no-repeat center center fixed;\n  height: 1080px;\n  -webkit-background-size: cover;\n  -moz-background-size: cover;\n  background-size: cover;\n  -o-background-size: cover;\n}\n']);
+var _templateObject = _taggedTemplateLiteral(['\n  background: url(\'http://via.placeholder.com/1920x1080\') no-repeat center center fixed;\n  height: 1080px;\n  -webkit-background-size: cover;\n  -moz-background-size: cover;\n  background-size: cover;\n  -o-background-size: cover;\n\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n'], ['\n  background: url(\'http://via.placeholder.com/1920x1080\') no-repeat center center fixed;\n  height: 1080px;\n  -webkit-background-size: cover;\n  -moz-background-size: cover;\n  background-size: cover;\n  -o-background-size: cover;\n\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n}\n']);
 
 var _react = __webpack_require__(7);
 
