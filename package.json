@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "express": "^4.16.2",
+    "nodemon": "^1.17.3",
     "pg": "^7.4.1",
     "pg-hstore": "^2.3.2",
     "prop-types": "^15.6.0",
@@ -25,8 +26,12 @@
   },
   "scripts": {
     "build": "webpack",
-    "build-watch": "webpack -w",
-    "start": "babel-node server",
+    "build-w": "webpack -w",
+    "start": "NODE_ENV='development' babel-node server",
+    "start-w": "NODE_ENV='development' nodemon server -e html,js,scss --ignore public",
+    "start-all-w": "yarn run build-watch & yarn run start-w",
+    "test": "NODE_ENV='test' DATABASE_URL='postgres://localhost:5432/offeredDB_dev' mocha ./**/*.spec.js --compilers js:babel-register",
+    "seed": "node seed",
     "clean": "rm -rf node_modules"
   }
 }

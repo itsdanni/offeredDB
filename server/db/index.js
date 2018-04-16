@@ -1,14 +1,10 @@
 /**
- * todo: connect to a postgres database
+ * export hub for both database and models
  */
-const Sequelize = require('sequelize');
-const sequelize = new Sequelize('postgres://localhost:5432/offeredDB_dev')
+const db = require('./db');
 
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });
+require('./model'); // export models
+
+module.exports = db;
+
+

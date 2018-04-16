@@ -3,28 +3,50 @@ const morgan = require('morgan');
 const bodyparser = require('body-parser');
 const path = require('path');
 
+const db = require('./db');
+const PORT = process.env.PORT || 8080
 const app = express();
+
 module.exports = app;
 
-// logging middleware
-app.use(morgan('dev'));
+// loading in keys in dev
+if (process.env.NODE_ENV !== 'production') require('../secrets')
 
-// parsing middleware
-app.use(bodyparser.json());
-app.use(bodyparser.urlencoded({ extended: true }));
+const configureApp = () => {
+	// logging middleware
+	app.use(morgan('dev'));
 
-// api routes
-//app.use('/api', require('./api'));
+	// parsing middleware
+	app.use(bodyparser.json());
+	app.use(bodyparser.urlencoded({ extended: true }));
 
-// load static resources from public directory
-app.use(express.static(path.join(__dirname, '..', 'public')));
+	// api routes
+	//app.use('/api', require('./api'));
 
-// error logging
-app.use((err, req, res, next) => {
-    console.error(err);
-    console.error(err.stack);
-    res.status(err.status || 500).send(err.message || 'Internal Server Error.');
-});
+	// load static resources from public directory
+	app.use(express.static(path.join(__dirname, '..', 'public')));
 
-// start server
-app.listen(3000, () => console.log('server is eagerly listening on port 3000! '));
+	// sends index.html
+  app.use('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'public/index.html'))
+  })
+
+	// error logging
+	app.use((err, req, res, next) => {
+			console.error(err);
+			console.error(err.stack);
+			res.status(err.status || 500).send(err.message || 'Internal Server Error.');
+	});
+}
+
+//const syncdb = () => db.sync();
+
+// returns a server instance
+const startServer = () => app.listen(PORT, () => console.log('server started on 8080!'))
+
+if (require.main === module) {
+	// functions will be called after database sync
+	db.authenticate()
+	.then(configureApp)
+	.then(startServer)
+} else configureApp()
