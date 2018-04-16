@@ -3,7 +3,7 @@ import { SearchBG } from './styled';
 
 const Search = (props) => {
   return (
-    <SearchBG className="container-fluid">
+    <SearchBG>
       <h1>hi</h1>
     </SearchBG>
   )
