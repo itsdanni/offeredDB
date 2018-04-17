@@ -5,7 +5,7 @@ const router = require('express').Router();
 
 module.exports = router;
 
-router.use('/comapnies', require('./companies'));
+router.use('/companies', require('./companies'));
 
 // error handling middleware for routes
 router.use((req, res, next) => {

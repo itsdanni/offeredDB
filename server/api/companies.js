@@ -2,13 +2,17 @@
  * router for all requests related to companies
  */
 const router = require('express').Router();
-const Company = require('../db').model('company');
+const db = require('../db/db');
+const Company = db.model('company');
 
 module.exports = router;
 
 // GET request for companies
 router.get('/', (req, res, next) => {
   Company.findAll()
-  .then(companies => res.json(companies))
+  .then(companies => {
+    console.log('companies: ', companies)
+    res.json(companies)
+  })
   .catch(next);
 });

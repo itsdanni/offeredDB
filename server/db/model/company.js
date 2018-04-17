@@ -9,7 +9,7 @@ const Company = db.define('company', {
     type: Sequelize.STRING //varchar(255)
   },
   website: {
-    type: Sequelize.STRING
+    type: Sequelize.TEXT
   },
   builtinnyc: {
     type: Sequelize.STRING
