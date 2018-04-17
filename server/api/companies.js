@@ -11,7 +11,7 @@ module.exports = router;
 router.get('/', (req, res, next) => {
   Company.findAll()
   .then(companies => {
-    console.log('companies: ', companies)
+    console.log('companies: ', companies[0])
     res.json(companies)
   })
   .catch(next);
