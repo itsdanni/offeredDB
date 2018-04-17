@@ -21,7 +21,7 @@ const configureApp = () => {
 	app.use(bodyparser.urlencoded({ extended: true }));
 
 	// api routes
-	//app.use('/api', require('./api'));
+	app.use('/api', require('./api'));
 
 	// load static resources from public directory
 	app.use(express.static(path.join(__dirname, '..', 'public')));
