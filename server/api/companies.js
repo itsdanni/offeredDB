@@ -2,8 +2,8 @@
  * router for all requests related to companies
  */
 const router = require('express').Router();
-const db = require('../db/db');
-const Company = db.model('company');
+const db = require('../db');
+const Company = db.company;
 
 module.exports = router;
 
@@ -11,7 +11,6 @@ module.exports = router;
 router.get('/', (req, res, next) => {
   Company.findAll()
   .then(companies => {
-    console.log('companies: ', companies[0])
     res.json(companies)
   })
   .catch(next);

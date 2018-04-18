@@ -1,9 +1,4 @@
-/**
- * export hub for both database and models
- */
-const db = require('./db');
-
-require('./model'); // export models
+const db = require('./models');
 
 module.exports = db;
 

@@ -1,0 +1,25 @@
+{
+  "development": {
+    "username": "danniliu",
+    "password": null,
+    "database": "offeredDB_dev",
+    "host": "localhost",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "danniliu",
+    "password": null,
+    "database": "offeredDB_test",
+    "host": "localhost",
+    "port": 5432,
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "danniliu",
+    "password": null,
+    "database": "offered_prod",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
